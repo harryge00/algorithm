@@ -32,20 +32,17 @@ class Solution {
 public:
     vector<Interval> insert(vector<Interval>& intervals, Interval newInterval) {
     	vector<Interval> res;
-    	bool expandNew = false; // newInterval is added?
     	bool isNewIntervalAdded = false;
     	for(vector<Interval>::iterator it = intervals.begin(); it != intervals.end(); it++) {
-    		if(it->end < newInterval.start || it->start > newInterval.end) {
-    			if(expandNew) {
-    				res.push_back(newInterval);
-    				isNewIntervalAdded = true;
-    				expandNew = false;
+    		if(it->end < newInterval.start) {
+    			res.push_back(*it);
+    		} else if(it->start > newInterval.end) {
+    			if(!isNewIntervalAdded) {
+	    			res.push_back(newInterval);
+	    			isNewIntervalAdded = true;
     			}
     			res.push_back(*it);
     		} else {
-    			if(!expandNew) {
-    				expandNew = true;
-    			}
     			if(it->start < newInterval.start) {
     				newInterval.start = it->start;
     			}
