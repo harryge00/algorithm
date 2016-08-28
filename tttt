@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.*;
+public class tttt
+{
+    public static void main(String args[])
+    {
+        Scanner cin = new Scanner(System.in);
+        int num;
+        int n;
+        num = cin.nextInt();
+        for(int i = 0; i < num; i++) {
+            n = cin.nextInt();
+            System.out.printf("%.2f\n", calN(n));
+            System.out.println();
+        }
+    }

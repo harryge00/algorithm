@@ -1,3 +1,7 @@
 *.o
+*.swp
 *.out
 *.obj
+*~
+*.class
+
