@@ -28,7 +28,7 @@ public:
             // } else if(newInterval.end >=)
             if(toBeContinued) {
                 if(newInterval.end < it->start) {
-                    intervals.emplace(it, newInterval);
+//                    intervals.emplace(it, newInterval);
                     // toBeContinued = false;
                     return intervals;
                 } else if(newInterval.end <= it->end){
@@ -41,7 +41,7 @@ public:
             }
             if(newInterval.start < it->start) {
                 if(newInterval.end < it->start) {
-                    intervals.emplace(it, newInterval);
+  //                  intervals.emplace(it, newInterval);
                     return intervals;
                 } else if(newInterval.end <= it->end) {
                     it->start = newInterval.start;
@@ -67,6 +67,8 @@ public:
 
 int main() {
     Solution s;
+	cout<<(0xFFF)<<endl;
+	cout<<(~0xFFF)<<endl;
     //[1,2],[3,5],[6,7],[8,10],[12,16]
     std::vector<Interval> v;
     // v.push_back(Interval(1, 2));
