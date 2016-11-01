@@ -1,11 +1,21 @@
+package main
+import "fmt"
+import "strings"
 func lengthOfLongestSubstring(s string) int {
-    m := make(map[string]bool)
-    record := make([]int)
-    i := 0
-    for c := range strings.Split(s, "") {
-    	if m[c] {
-    		record = append(record, i)
+    m := make(map[string]int)
+    res := 0
+    for i, c := range strings.Split(s, "") {
+    	if _, ok := m[c]; ok {
+    		tmp := i - m[c] + 1
+    		if tmp > res {
+    			res = tmp
+    		}
     	}
-    	i++
+		m[c] = i
     }
+    return res
+}
+
+func main() {
+	lengthOfLongestSubstring("avdfadfef")
 }

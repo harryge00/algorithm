@@ -25,6 +25,7 @@ int main()
         std::cout<<(k = 91)<<endl;
     }
   std::cout << sizeof(s1)<<endl;
+  std::cout << "abc"::length<<endl;
   std::cout << sizeof(s2)<<endl;
   std::cout << sizeof(s3)<<endl;
 }
