@@ -2,6 +2,10 @@
 #include <iostream>
 #include <map>
 
+struct tt {
+  int a;
+  int b;
+};
 int main ()
 {
   std::map<char,int> mymap;
@@ -16,5 +20,10 @@ int main ()
     std::cout <<mymap['d'];
   std::map<char,bool> mm;
   std::cout << mm['d']<<std::endl;
+  std::map<char,tt> mm2;
+  std::cout << mm2['d']<<std::endl;
+  tt v1= {1, 2};
+  mm2['d'] = v1;
+  std::cout << mm2['d']<<std::endl;
   return 0;
 }
