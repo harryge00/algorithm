@@ -34,4 +34,7 @@ int main()
   int c=132;
   b= &c;
   std::cout << a<<b<<endl;
+  string s ="asdfadf";
+  std::cout << s[5]<<s.length()<<endl;
+
 }
