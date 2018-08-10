@@ -13,7 +13,7 @@ public class didi
         int col = 0;
         int [][] arr = new int[100][100];
 
-         String str = cin.nextLine();
+        String str = cin.nextLine();
              for(int i = 0; i < str.length(); i++) {
                  char c = str.charAt(i);
                  if(c==';') {
