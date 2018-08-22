@@ -19,3 +19,24 @@ func lengthOfLongestSubstring(s string) int {
 func main() {
 	lengthOfLongestSubstring("avdfadfef")
 }
+
+func search(nums []int, target int) int {
+    l, r := 0, len(nums) - 1
+    var m int
+    for l <= r {
+        m = (l + r) / 2
+        if nums[m] == target {
+            return m
+        } else if nums[m] < target {
+            if nums[l] < nums[r] {
+                l = m + 1
+            } else if nums[l] > target {
+                l = m + 1
+            } else {
+
+            }
+        }
+        m = (l + r) / 2
+    }
+    return -1
+}
