@@ -1,0 +1,8 @@
+class helloworld {
+    notify { 'Hello, Puppet': }
+}
+
+ogdmoq
+
+/var/save/puppet_count_4/countfiles_ext_a_p_v.txt
+
