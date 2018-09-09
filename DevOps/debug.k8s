@@ -1,0 +1,133 @@
+# kubectl get node                                   
+NAME                            STATUS     ROLES     AGE       VERSION
+ip-172-20-35-231.ec2.internal   NotReady   master    1d        v1.9.8
+
+# There must be something wrong on the Master node. It seems like the kubelet is not running?
+kubectl describe node ip-172-20-35-231.ec2.internal
+Name:               ip-172-20-35-231.ec2.internal
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/instance-type=t2.medium
+                    beta.kubernetes.io/os=linux
+                    failure-domain.beta.kubernetes.io/region=us-east-1
+                    failure-domain.beta.kubernetes.io/zone=us-east-1a
+                    kops.k8s.io/instancegroup=master-us-east-1a
+                    kubernetes.io/hostname=ip-172-20-35-231.ec2.internal
+                    kubernetes.io/role=master
+                    node-role.kubernetes.io/master=
+Annotations:        node.alpha.kubernetes.io/ttl=0
+                    projectcalico.org/IPv4Address=172.20.35.231/19
+                    volumes.kubernetes.io/controller-managed-attach-detach=true
+Taints:             node-role.kubernetes.io/master:NoSchedule
+CreationTimestamp:  Sat, 08 Sep 2018 01:14:10 +0800
+Conditions:
+  Type             Status    LastHeartbeatTime                 LastTransitionTime                Reason                     Message
+  ----             ------    -----------------                 ------------------                ------                     -------
+  OutOfDisk        False     Sat, 08 Sep 2018 01:49:14 +0800   Sat, 08 Sep 2018 01:14:10 +0800   KubeletHasSufficientDisk   kubelet has sufficient disk space available
+  MemoryPressure   Unknown   Sat, 08 Sep 2018 01:49:14 +0800   Sat, 08 Sep 2018 01:51:09 +0800   NodeStatusUnknown          Kubelet stopped posting node status.
+  DiskPressure     Unknown   Sat, 08 Sep 2018 01:49:14 +0800   Sat, 08 Sep 2018 01:51:09 +0800   NodeStatusUnknown          Kubelet stopped posting node status.
+  Ready            Unknown   Sat, 08 Sep 2018 01:49:14 +0800   Sat, 08 Sep 2018 01:51:09 +0800   NodeStatusUnknown          Kubelet stopped posting node status.
+Addresses:
+  InternalIP:   172.20.35.231
+  ExternalIP:   18.212.57.155
+  InternalDNS:  ip-172-20-35-231.ec2.internal
+  ExternalDNS:  ec2-18-212-57-155.compute-1.amazonaws.com
+  Hostname:     ip-172-20-35-231.ec2.internal
+Capacity:
+ cpu:     2
+ memory:  4049296Ki
+ pods:    110
+Allocatable:
+ cpu:     2
+ memory:  3946896Ki
+ pods:    110
+System Info:
+ Machine ID:                 382a7b4d31764ae689851b2b2eaab848
+ System UUID:                EC257EED-D9B6-133A-26F9-9BE81DA2CFD9
+ Boot ID:                    270cf610-e3d6-4fb4-8e7c-e943f03c4873
+ Kernel Version:             4.4.121-k8s
+ OS Image:                   Debian GNU/Linux 8 (jessie)
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  docker://17.3.2
+ Kubelet Version:            v1.9.8
+ Kube-Proxy Version:         v1.9.8
+PodCIDR:                     100.96.0.0/24
+ExternalID:                  i-0176574f2ffca9e75
+Non-terminated Pods:         (7 in total)
+  Namespace                  Name                                                     CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ---------                  ----                                                     ------------  ----------  ---------------  -------------
+  kube-system                dns-controller-f94d5744-w89mw                            50m (2%)      0 (0%)      50Mi (1%)        0 (0%)
+  kube-system                etcd-server-events-ip-172-20-35-231.ec2.internal         100m (5%)     0 (0%)      0 (0%)           0 (0%)
+  kube-system                etcd-server-ip-172-20-35-231.ec2.internal                200m (10%)    0 (0%)      0 (0%)           0 (0%)
+  kube-system                kube-apiserver-ip-172-20-35-231.ec2.internal             150m (7%)     0 (0%)      0 (0%)           0 (0%)
+  kube-system                kube-controller-manager-ip-172-20-35-231.ec2.internal    100m (5%)     0 (0%)      0 (0%)           0 (0%)
+  kube-system                kube-proxy-ip-172-20-35-231.ec2.internal                 100m (5%)     0 (0%)      0 (0%)           0 (0%)
+  kube-system                kube-scheduler-ip-172-20-35-231.ec2.internal             100m (5%)     0 (0%)      0 (0%)           0 (0%)
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ------------  ----------  ---------------  -------------
+  800m (40%)    0 (0%)      50Mi (1%)        0 (0%)
+Events:
+  Type    Reason                   Age   From                                    Message
+  ----    ------                   ----  ----                                    -------
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  NodeAllocatableEnforced  59m   kubelet, ip-172-20-35-231.ec2.internal  Updated Node Allocatable limit across pods
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  NodeAllocatableEnforced  59m   kubelet, ip-172-20-35-231.ec2.internal  Updated Node Allocatable limit across pods
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  NodeAllocatableEnforced  59m   kubelet, ip-172-20-35-231.ec2.internal  Updated Node Allocatable limit across pods
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  NodeAllocatableEnforced  59m   kubelet, ip-172-20-35-231.ec2.internal  Updated Node Allocatable limit across pods
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  NodeAllocatableEnforced  59m   kubelet, ip-172-20-35-231.ec2.internal  Updated Node Allocatable limit across pods
+  Normal  Starting                 59m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 58m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 58m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 58m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+  Normal  Starting                 58m   kubelet, ip-172-20-35-231.ec2.internal  Starting kubelet.
+
+
+
+The kubelet on the Master is NotReady!
+What's the external DNS of the master? I neeed to ssh.
+
+kubectl get node ip-172-20-35-231.ec2.internal -o yaml|grep ExternalDNS
+
+
+# systemctl status kubelet
+● kubelet.service - Kubernetes Kubelet Server
+   Loaded: loaded (/lib/systemd/system/kubelet.service; static)
+   Active: activating (auto-restart) (Result: exit-code) since Sun 2018-09-09 13:12:00 UTC; 281ms ago
+     Docs: https://github.com/kubernetes/kubernetes
+  Process: 7359 ExecStart=/usr/local/bin/kubelet $DAEMON_ARGS (code=exited, status=255)
+ Main PID: 7359 (code=exited, status=255)
+
+Sep 09 13:12:00 ip-172-20-35-231 systemd[1]: kubelet.service: main process exited, code=exited, status=255/n/a
+Sep 09 13:12:00 ip-172-20-35-231 systemd[1]: Unit kubelet.service entered failed state.
+
+
+
+Sep 09 13:00:00 ip-172-20-35-231 kubelet[27240]: F0909 13:00:00.639458   27240 server.go:141] listen tcp 0.0.0.0:10250: bind: address already in use
+Sep 09 13:00:00 ip-172-20-35-231 systemd[1]: kubelet.service: main process exited, code=exited, status=255/n/a
+Sep 09 13:00:00 ip-172-20-35-231 systemd[1]: Unit kubelet.service entered failed state.
+Sep 09 13:00:02 ip-172-20-35-231 systemd[1]: kubelet.service holdoff time over, scheduling restart.
+
