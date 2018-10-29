@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 int longestPalindromeSubseq(string s) {
@@ -15,5 +16,6 @@ int longestPalindromeSubseq(string s) {
 int main ()
 {
   cout<<"abxcybaz " << longestPalindromeSubseq("abxcybaz")<<endl;
-  return 0;
+  cout<< (4||7) <<","<< (5||3) << endl;
+  return 0; 
 }
