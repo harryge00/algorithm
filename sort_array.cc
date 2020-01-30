@@ -2,12 +2,17 @@
 #include <algorithm>
 #include <vector>
 
+# 3 2 1 5 6 4 
+# 2 1 3 5 6 4
+
 using namespace std;
 
 // We need this function to define how to sort
 // the vector. We will pass this function into the
 // third parameter and it will tell it to sort descendingly.
-bool wayToSort(int i, int j) { return i > j; }
+bool wayToSort(int i, int j) {
+	return i > j;
+}
 
 int main()
 {
