@@ -42,6 +42,11 @@ void wallsAndGates(vector<vector<int>>& rooms) {
 }
 
 int main() {
-    vector<vector<int> > rooms;
+    vector<vector<int> > rooms{
+        {2147483647,-1,0,2147483647},
+        {2147483647,2147483647,2147483647,-1},
+        {2147483647,-1,2147483647,-1},
+        {0,-1,2147483647,2147483647}
+    };
     wallsAndGates(rooms);
 }
