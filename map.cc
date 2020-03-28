@@ -17,13 +17,15 @@ int main ()
   // show content:
   for (std::map<char,int>::iterator it=mymap.begin(); it!=mymap.end(); ++it)
     std::cout << it->first << " => " << it->second << '\n';
-    std::cout <<mymap['d'];
+  
+  std::cout <<mymap['d']<<std::endl;
+  
   std::map<char,bool> mm;
   std::cout << mm['d']<<std::endl;
-  std::map<char,tt> mm2;
-  std::cout << mm2['d']<<std::endl;
-  tt v1= {1, 2};
-  mm2['d'] = v1;
-  std::cout << mm2['d']<<std::endl;
+  // std::map<char,tt> mm2;
+  // std::cout << mm2['d']<<std::endl;
+  // tt v1= {1, 2};
+  // mm2['d'] = v1;
+  // std::cout << mm2['d']<<std::endl;
   return 0;
 }

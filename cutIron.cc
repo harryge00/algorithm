@@ -5,6 +5,7 @@
 
 using namespace std;
 
+int x[] = {0,1,5,8,9,10,17,17,20,24,30};
 
 int findElem(vector<int> &nums, int lo, int hi, int k) {
 	if(lo >= hi) return nums[lo];
@@ -30,17 +31,6 @@ int findElem(vector<int> &nums, int lo, int hi, int k) {
 }
 
 int main() {
-	int x[3][4] = {0, 1 ,2 ,3 ,4 , 5 , 6 , 7 , 8 , 9 , 10 , 11};
-	int x2[3][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}};
-	cout << sizeof(x)/sizeof(*x) << endl;
-	cout << sizeof(x[0])/sizeof(*x[0]) << endl;
-
-	string str = "(-3,5),(87,4),(93,3),(3,0)";
-	cout<<str.substr(str.find('(') + 1, str.find(","));
-	int* arr = new int[10];
-	cout<<arr[0]<<","<<arr[1]<<","<<arr[2]<<","<<arr[3];
-	cout<<endl;
-	char bitmap[2][4];
-	cout<<"bitmap: "<<bitmap[0][3] << "," <<bitmap[0][1] << "," <<bitmap[1][0] << "," << bitmap[1][2] << endl;
+	
 	
 }

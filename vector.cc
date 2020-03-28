@@ -34,4 +34,17 @@ int main() {
 
     vector<vector<bool>> d2(5, vector<bool>(6));
 	print2dVector<bool>(d2);
+	vector<int> emptyv;
+	sort(emptyv.begin(),emptyv.end());
+	cout << emptyv.size();
 }
+
+/*
+
+1	2	3	4	5	6	7	8	9
+2	4	6	8	10	12	14	16	18
+3	6	9	12	15	18	21	24	27
+
+m * n
+min(x/i, n)
+*/

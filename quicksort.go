@@ -17,6 +17,10 @@ func main() {
     sort(nums, 0, len(nums) - 1)
     fmt.Println(nums)
 
+    bits := [10]byte{}
+    fmt.Println(bits)
+
+
 }
 
 func sort(nums []int, lo int, hi int) {
