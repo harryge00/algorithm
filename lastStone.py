@@ -1,6 +1,6 @@
 def insert(stones, num):
     res = []
-    for i in range(stones):
+    for i in range(len(stones)):
         if num <= stones[i]:
             # 新石头找插入位置
             res[i] = num
@@ -8,7 +8,6 @@ def insert(stones, num):
             return res
         else:
             res[i] = stones[i]
-
     res.append(num)
     return res
 
